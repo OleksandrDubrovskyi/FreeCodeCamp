@@ -1,0 +1,36 @@
+button {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 5px 15px;
+  border: 2px solid white;
+  border-radius: 3px;
+  background-color: blue;
+}
+
+.container {
+  font-family: Sans;
+  font-size: 3em;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  padding: 50px 20px;
+  margin: 2em auto;
+}
+
+#quoteArea {
+  background: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1em;
+  padding: 50px 20px;
+  margin: 0px auto 30px auto;
+}
+
+#qButton {
+  float: left;
+}
+
+#twtButton {
+  float: right;
+}

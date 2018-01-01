@@ -1,0 +1,24 @@
+a {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+body {
+  background-image: url(https://hdwallsource.com/img/2014/2/cute-backgrounds-16992-17546-hd-wallpapers.jpg);
+  background-repeat: repeat-x repeat-y;
+}
+
+p {
+	font-size: 16px;
+}
+
+.container {
+  font-family: Sans;
+  font-size: 3em;
+  position: relative;
+  width: 50%;
+  
+  padding: 0 20px;
+  margin: 20px auto;
+}
+

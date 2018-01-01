@@ -1,0 +1,55 @@
+body {
+  background-color: rgb(51, 153, 255);
+}
+
+.container {
+  font-family: sans-serif;
+  font-size: 26px;
+  width: 80%;
+  margin: auto;
+}
+
+.container h1 {
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 5px 5px rgb(0, 0, 102);	
+}
+
+.channel {
+	background-color: rgba(255, 255, 255, 0.6);
+	border: 3px solid rgb(0, 51, 204);
+	border-radius: 10px;
+	font-family: serif;
+	font-size: 20px;
+	margin: 6px auto;
+	padding: 20px;
+}
+
+.channel a {
+	font-family: sans-serif;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.channel a:link {
+    color: blue;
+}
+
+.channel a:visited {
+    color: blue;
+}
+
+.channel p {
+	display: inline;
+}
+
+.name {
+	float: left;
+	font-weight: bold;
+	min-width: 160px;
+}
+
+.streaming {
+	background-color: rgba(255, 0, 255, 0.6);
+}
