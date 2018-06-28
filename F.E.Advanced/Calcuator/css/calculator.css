@@ -1,0 +1,13 @@
+#usersInput {
+  width: 198px;
+  margin-bottom: 20px;
+}
+
+.num {
+  background-color: blueviolet;
+  border: 1px solid black;
+  color: yellow;
+  font-weight: bold; 
+  padding: 10px 27px;
+  margin-bottom: 10px;
+}

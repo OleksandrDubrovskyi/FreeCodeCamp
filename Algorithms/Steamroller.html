@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Steamroller</title>
+    
+</head>
+<body>
+    <script>
+		//https://www.freecodecamp.org/challenges/steamroller
+		//https://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays-in-javascript
+
+
+		function steamrollArray(arr) {
+			// I'm a steamroller, baby
+			return arr.reduce(function (flat, toFlatten) {
+			  return flat.concat(Array.isArray(toFlatten) ? steamrollArray(toFlatten) : toFlatten);
+			}, []);
+		  }
+		  
+		  steamrollArray([1, [2], [3, [[4]]]]);
+
+		  /*Simply great solution, need to work on the syntax:
+		  *
+		  * function flatArray([x,...xs]){
+		  *	   return x ? [...Array.isArray(x) ? flatArray(x) : [x], ...flatArray(xs)] : [];
+		  * }
+		  */
+		  
+    </script>
+</body>
+</html>

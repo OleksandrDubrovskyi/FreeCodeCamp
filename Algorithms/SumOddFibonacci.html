@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sum All Odd Fibonacci Numbers</title>
+    
+</head>
+<body>
+    <script>
+        //https://www.freecodecamp.org/challenges/sum-all-odd-fibonacci-numbers
+
+        function sumFibs(num) {
+            var fib1 = 1;
+            var fib2 = 1;
+            var counter = 2;
+            
+            var i = 0;
+            while( i <= num) {
+                i = fib1 + fib2;
+                fib1 = fib2;
+                fib2 = i;
+                
+                if(i%2 === 1 && i <= num) {
+                    counter += i;
+                    }
+            }
+            return counter;
+        }
+
+        sumFibs(4);
+          
+    </script>
+</body>
+</html>

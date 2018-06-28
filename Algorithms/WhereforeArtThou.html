@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Wherefore art thou</title>
+    
+</head>
+<body>
+    <script>
+        //https://www.freecodecamp.org/challenges/wherefore-art-thou
+
+        function whatIsInAName(collection, source) {
+        // What's in a name?
+            var arr = [];
+
+            // Only change code below this line
+            var props = Object.keys(source); //is an array
+            
+            for (var i = 0; i < collection.length; i++) {
+                console.log(collection[i], source);
+                var res = checkProps(collection[i], props, source);
+                console.log(res);
+
+                if(res) {
+                    arr.push(collection[i]);
+                }
+            }
+            
+            // Only change code above this line
+            return arr;
+        }
+
+        function checkProps(arrToCheck, props, source) {
+            props.every(function(value) {
+                console.log(arrToCheck.hasOwnProperty(value) &&
+                        arrToCheck[value] === source[value]);
+                return(arrToCheck.hasOwnProperty(value) &&
+                        arrToCheck[value] === source[value]);
+            });
+            /*
+            for(var i = 0; i < props.length; i++) {
+                if(arrToCheck.hasOwnProperty(props[i])) {
+                    if( arrToCheck[props[i]] === source[props[i]]) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+            */
+        }
+        whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 })
+    </script>
+</body>
+</html>

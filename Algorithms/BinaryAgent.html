@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Binary Agents</title>
+    
+</head>
+<body>
+    <script>
+        //https://www.freecodecamp.org/challenges/binary-agents
+        //https://www.w3resource.com/javascript-exercises/javascript-math-exercise-2.php
+
+        function binaryAgent(str) {
+  
+            var result = "";
+            var splitted = str.split(" ");
+            
+            splitted.forEach(value => result += String.fromCharCode(parseInt(value, 2)));
+            
+            return result;
+          }
+          
+
+    </script>
+</body>
+</html>

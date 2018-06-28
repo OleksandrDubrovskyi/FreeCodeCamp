@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Search and Replace</title>
+    
+</head>
+<body>
+    <script>
+        //https://www.freecodecamp.org/challenges/search-and-replace
+
+		function myReplace(str, before, after) {
+
+			var temporaryAfter = after;
+			if(initialIsCapital(before)) {
+				temporaryAfter = after.charAt(0).toUpperCase() + after.slice(1);
+			}
+			
+			var newStr = str.replace(before, temporaryAfter);
+			
+			return newStr;
+		}
+
+		function initialIsCapital(word) {
+		    return word[0] !== word[0].toLowerCase();
+		}
+
+		myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+    </script>
+</body>
+</html>
