@@ -3,8 +3,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	color: #222;
-	background-color: #ECF0F1;
+	color: #05386b;
+	background-color: #5cdb95;
 	text-align: center;
 }
 
@@ -17,15 +17,12 @@ body {
 	margin-top: 60px;
 }
 
-ol {
-	list-style-position: inside;
-}
-ul {
-	list-style-type: none;
-}
-
 a {
 	color: #2574A9;
+}
+
+h2 {
+	color: #edf5e1;
 }
 
 input {
