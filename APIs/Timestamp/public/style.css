@@ -1,12 +1,16 @@
 /****** Main Styling ******/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: #222;
-	background-image: url("https://get.pxhere.com/photo/beach-landscape-coast-nature-outdoor-sand-ocean-cloud-sky-wood-sunshine-sun-white-sunlight-shore-wave-floor-summer-vacation-travel-line-relax-paradise-scenic-tropical-natural-seascape-holiday-soil-material-sunny-resort-hot-habitat-flooring-natural-environment-aeolian-landform-laminate-flooring-1383636.jpg");
+	background-image: url("https://images.unsplash.com/photo-1465634836201-1d5651b9b6d6");
 	background-size: cover;
-	/* background-color: #FaFaFa; */
 	text-align: center;
 	line-height: 1.4em;
 }
@@ -20,8 +24,11 @@ h3 {
   margin-top: 30px;
 }
 
-.footer {
+footer {
+  min-height: 50px;
 	margin-top: 40px;
+	padding: 20px 0;
+  background-color: burlywood;
 }
 
 .user-stories {
@@ -52,4 +59,16 @@ li {
 
 a {
 	color: #2574A9;
+}
+
+.input {
+	color: red;
+	font-weight: bold;
+}
+
+#viridian {
+	background-color: burlywood;
+	color: darkolivegreen;
+	margin-bottom: 20px;
+	padding: 20px 0;
 }
