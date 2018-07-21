@@ -7,10 +7,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<nav id="navbar">
-
-		</nav>
-
+		
 		<h1 id="title">Survey Form</h1>
 
 		<p id="description">This is a Survey Form for our users.</p>
@@ -25,26 +22,34 @@
 
 			<label for="number" id="number-label">Your age</label>
 			<input type="number" id="number" min="10" max="120" placeholder="Enter your age"> <br>
+			<hr>
 
-			<label for="cars">Your prefferred car</label>
-			<select name="cars" id="dropdown">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="fiat">Fiat</option>
-				<option value="audi">Audi</option>
-			</select> <br>
+			<h3>Your preferences:</h3>
 
-			<p>Your preffered pets</p>
-			Dogs <input type="radio" name="pets">
-			Cats <input type="radio" name="pets">
-			Fish <input type="radio" name="pets"> <br>
+			<span class="legend">Your pet:</span>
+			<select name="pets" id="dropdown">
+				<option value="pet">Pet</option>
+				<option value="dog">Dog</option>
+				<option value="cat">Cat</option>
+				<option value="fish">Fish</option>
+				<option value="other">Other</option>
+			</select> <br><br>
 
-			<p>Your preffered hobbies</p>
-			Knitting <input type="checkbox" value="knitting"> <br>
-			Quilling <input type="checkbox" value="quilling"> <br>
-			Geocashing <input type="checkbox" value="geocashing"> <br>
-			Stamp collecting <input type="checkbox" value="stamp-collecting"> <br>
-			Farming <input type="checkbox" value="farming"> <br>
+			<p>Your preferred food manufacturer:</p>
+			<span class="legend">Pedigree</span> <input type="radio" name="manufacturer" value="pedigree">
+			<span class="legend">Royal Canine</span> <input type="radio" name="manufacturer" value="royal-canine">
+			<span class="legend">Purina</span> <input type="radio" name="manufacturer" value="purina">
+			<span class="legend">Other</span> <input type="radio" name="manufacturer" value="other"> <br><br>
+
+
+			<p>Your preferred hobbies</p>
+			<span class="legend">Knitting</span> <input type="checkbox" value="knitting"> <br>
+			<span class="legend">Quilling</span> <input type="checkbox" value="quilling"> <br>
+			<span class="legend">Geocashing</span> <input type="checkbox" value="geocashing"> <br>
+			<span class="legend">Stamp collecting</span> <input type="checkbox" value="stamp-collecting"> <br>
+			<span class="legend">Farming</span> <input type="checkbox" value="farming"> <br>
+
+			<hr>
 
 			<textarea rows="10" cols="50"></textarea> <br>
 
