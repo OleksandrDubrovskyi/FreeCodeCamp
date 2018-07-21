@@ -25,7 +25,7 @@ header {
     flex-basis: 100%;
 }
   
- #nav-bar ul {
+#nav-bar ul {
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
@@ -88,4 +88,12 @@ aside {
     flex-direction: column;
     flex: 1 1 80%;
     padding: 10px;
+}
+
+@media(max-width: 800px) {
+    #wrap-wines {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
