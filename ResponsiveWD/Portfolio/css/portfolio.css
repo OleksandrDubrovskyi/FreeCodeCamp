@@ -4,12 +4,29 @@
   box-sizing: border-box;
 }
 
+li a {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+}
+
 #navbar {
   position: fixed;
   top: 0;
   left: 0;
-  right: 100%;
-  margin-bottom: 20px;
+  right: 0%;
+  min-height: 40px;
+  background-color: blue;
+  padding: 10px;
+}
+
+#navbar ul {
+  display: flex;
+}
+
+#navbar ul li {
+  list-style: none;
+  font-weight: bold;
 }
 
 #projects {
@@ -25,8 +42,6 @@
 #welcome-section {
   background-color: burlywood;
   min-height: 100vh;
-}
-
-#wrapper {
-  position: relative;
+  margin-top: 40px;
+  padding: 40px 20px 20px 20px;
 }
