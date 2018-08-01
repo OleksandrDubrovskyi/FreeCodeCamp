@@ -12,7 +12,21 @@
   margin-bottom: 20px;
 }
 
+#projects {
+  display: flex;
+  min-height: 50vh;
+  background-color: aqua;
+}
+
+.project-tile {
+  flex: 25% 1 1;
+}
+
 #welcome-section {
   background-color: burlywood;
   min-height: 100vh;
+}
+
+#wrapper {
+  position: relative;
 }
