@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/recipebox.css">
+	<title>Recipe Box</title>
+</head>
+<body>
+	<h1>Recipe Box</h1>
+
+	<section id="recipe-list">
+		<header>
+			<h2>Create a recipe</h2>
+
+			<button id="create">Create new recipe</button>
+		</header>
+
+		<div id="list">
+
+		</div>
+
+	</section>
+
+	<section id="recipe">
+		<div id="name"></div>
+
+		<div id="ingredients"></div>
+
+		<div id="instructions"></div>
+
+
+	</section>
+
+	<div class="modal" id="modal">
+		<div class="modal-backdrop"></div>
+		<div class="modal-body">
+			<button class="modal-close" id="close">close</button>
+			<h2>Create a new recipe!</h2>
+			<p>Please complete the following form.</p>
+			<form>
+				<p>
+					<label for="recipe-name">Recipe name:</label><br>
+					<textarea rows="1" cols="50" name="recipe-name"></textarea>
+				</p>
+				<p>
+					<label for="ingredients">Ingredients:</label><br>
+					<textarea rows="4" cols="50" name="ingredients"></textarea>
+				</p>
+				<p>
+					<label for="directions">Directions:</label><br>
+					<textarea rows="4" cols="50" name="directions"></textarea>
+				</p>
+				<p>
+					<button type="submit">Submit</button>
+				</p>
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+	<script type="text/javascript" src="js/recipebox.js"></script>
+</body>
+</html>
