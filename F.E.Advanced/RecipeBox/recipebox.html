@@ -37,18 +37,20 @@
 			<button class="modal-close" id="close">close</button>
 			<h2>Create a new recipe!</h2>
 			<p>Please complete the following form.</p>
-			<form>
+			<form id="input-form">
 				<p>
 					<label for="recipe-name">Recipe name:</label><br>
 					<textarea rows="1" cols="50" name="recipe-name"></textarea>
 				</p>
 				<p>
 					<label for="ingredients">Ingredients:</label><br>
-					<textarea rows="4" cols="50" name="ingredients"></textarea>
+					<textarea rows="4" cols="50" name="ingredients" 
+						placeholder="Enter your ingredients here. Use ; as separator"></textarea>
 				</p>
 				<p>
 					<label for="directions">Directions:</label><br>
-					<textarea rows="4" cols="50" name="directions"></textarea>
+					<textarea rows="4" cols="50" name="directions"
+						placeholder="Leave the directions for cooking. Use ; as separator"></textarea>
 				</p>
 				<p>
 					<button type="submit">Submit</button>
