@@ -15,12 +15,28 @@ close.addEventListener('click', function (evt) {
 	modal.style.display = 'none';
 });
 
+//-------------Recipes----------------------------\\
+var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+const recipeName = document.getElementById('name');
+const recipeIngredients = document.getElementById('ingredients');
+const recipeInstructions = document.getElementById('instructions');
+
+const updateRecipeNames = () => {
+	if(savedRecipes) {
+		let names = '';
+		for (let i = 0; i < savedRecipes.length; i++) {
+			names += `<li>${savedRecipes[i]["recipe-name"]}</li>`;		
+		}
+	
+		recipeName.innerHTML = `<ul>${names}</ul>`;
+	}
+}
+
+updateRecipeNames();
 
 
 //----------------------------------------------------------------\\
-
-var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-
 const form = document.getElementById('input-form');
 
 const isValidElement = element => {
@@ -38,6 +54,7 @@ const handleFormSubmit = event => {
 
 	savedRecipes.push(data);
 	localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+	updateRecipeNames();
 	form.reset();
 
 	console.log(localStorage.savedRecipes);
