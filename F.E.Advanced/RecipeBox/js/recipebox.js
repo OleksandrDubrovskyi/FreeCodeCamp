@@ -18,18 +18,32 @@ close.addEventListener('click', function (evt) {
 //-------------Recipes----------------------------\\
 var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
 
-const recipeName = document.getElementById('name');
-const recipeIngredients = document.getElementById('ingredients');
-const recipeInstructions = document.getElementById('instructions');
+const recipeList = document.getElementById('list');
 
 const updateRecipeNames = () => {
 	if(savedRecipes) {
 		let names = '';
 		for (let i = 0; i < savedRecipes.length; i++) {
-			names += `<li>${savedRecipes[i]["recipe-name"]}</li>`;		
+			names += `<li onclick="showRecipe(this)">${savedRecipes[i]["recipe-name"]}</li>`;		
 		}
 	
-		recipeName.innerHTML = `<ul>${names}</ul>`;
+		recipeList.innerHTML = `<ul>${names}</ul>`;
+	}
+}
+
+const showRecipe = (e) => {
+	const recipeName = document.getElementById('name');
+	const recipeIngredients = document.getElementById('ingredients');
+	const recipeDirections = document.getElementById('directions');
+	
+	for (let r = 0; r < 10; r++) {
+		if(savedRecipes[r]["recipe-name"] == e.innerText) {
+			recipeName.innerHTML = `<h2>${savedRecipes[r]["recipe-name"]}</h2>`;
+			recipeIngredients.innerHTML = `<p>${savedRecipes[r]["ingredients"]}</p>`;
+			recipeDirections.innerHTML = `<p>${savedRecipes[r]["directions"]}</p>`;
+
+			break;
+		}
 	}
 }
 

@@ -4,6 +4,12 @@
   margin: 0;
 }
 
+#name {
+  min-height: 40px;
+  background-color: blue;
+  color: white;
+}
+
 #recipe {
   min-height: 200px;
   display: flex;
