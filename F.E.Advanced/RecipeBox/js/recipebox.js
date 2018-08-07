@@ -31,20 +31,29 @@ const updateRecipeNames = () => {
 	}
 }
 
-const showRecipe = (e) => {
+const recipesInTheList = [].slice.call(document.querySelectorAll('#list li'), 0);
+
+const showRecipe = (rec) => {
+	const recipeNumber = recipesInTheList.indexOf(rec)
+
 	const recipeName = document.getElementById('name');
 	const recipeIngredients = document.getElementById('ingredients');
 	const recipeDirections = document.getElementById('directions');
-	
-	for (let r = 0; r < 10; r++) {
-		if(savedRecipes[r]["recipe-name"] == e.innerText) {
-			recipeName.innerHTML = `<h2>${savedRecipes[r]["recipe-name"]}</h2>`;
-			recipeIngredients.innerHTML = `<p>${savedRecipes[r]["ingredients"]}</p>`;
-			recipeDirections.innerHTML = `<p>${savedRecipes[r]["directions"]}</p>`;
 
-			break;
-		}
-	}
+
+	recipeName.innerHTML = `<h2>${savedRecipes[recipeNumber]["recipe-name"]}</h2>`;
+	recipeIngredients.innerHTML = `<p>${savedRecipes[recipeNumber]["ingredients"]}</p>`;
+	recipeDirections.innerHTML = `<p>${savedRecipes[recipeNumber]["directions"]}</p>`;
+	
+	// for (let r = 0; r < 10; r++) {
+	// 	if(savedRecipes[r]["recipe-name"] == e.innerText) {
+	// 		recipeName.innerHTML = `<h2>${savedRecipes[r]["recipe-name"]}</h2>`;
+	// 		recipeIngredients.innerHTML = `<p>${savedRecipes[r]["ingredients"]}</p>`;
+	// 		recipeDirections.innerHTML = `<p>${savedRecipes[r]["directions"]}</p>`;
+
+	// 		break;
+	// 	}
+	// }
 }
 
 updateRecipeNames();
