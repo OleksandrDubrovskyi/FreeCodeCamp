@@ -1,5 +1,7 @@
 //https://code.lengstorf.com/get-form-values-as-json/
 
+
+// Global DOM constants
 const create = document.getElementById('create');
 const deleteRec = document.getElementById('delete');
 const close = document.getElementById('close');
@@ -9,7 +11,7 @@ const recipeName = document.getElementById('name');
 const recipeIngredients = document.getElementById('ingredients');
 const recipeDirections = document.getElementById('directions');
 
-
+// DOM elements event listeners
 create.addEventListener('click', function (evt) {
 	evt.preventDefault();
 	modal.style.display = 'block';
@@ -63,8 +65,13 @@ const deleteRecipe = () => {
 	recipeDirections.innerHTML = ``;
 }
 
+const resetLocalStorage = () => {
+	localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+	updateRecipeNames();
+	recipesInTheList = [].slice.call(document.querySelectorAll('.stored'), 0);
+}
 
-//----------------------------------------------------------------\\
+//---------------------Modal widget------------------------\\
 const form = document.getElementById('input-form');
 
 const isValidElement = element => {
@@ -93,8 +100,3 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
   }, {});
 
 
-function resetLocalStorage() {
-	localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
-	updateRecipeNames();
-	recipesInTheList = [].slice.call(document.querySelectorAll('.stored'), 0);
-}
