@@ -6,6 +6,7 @@ const create = document.getElementById('create');
 const deleteRec = document.getElementById('delete');
 const close = document.getElementById('close');
 const modal = document.getElementById('modal');
+const update = document.getElementById('update');
 
 const recipeName = document.getElementById('name');
 const recipeIngredients = document.getElementById('ingredients');
@@ -22,13 +23,18 @@ deleteRec.addEventListener('click', function (evt) {
 	deleteRecipe();
 });
 
+update.addEventListener('click', function (evt) {
+	evt.preventDefault();
+	updateRecipe();
+});
+
 close.addEventListener('click', function (evt) {
 	evt.preventDefault();
 	modal.style.display = 'none';
 });
 
 //-------------Recipes----------------------------\\
-var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
 
 const recipeList = document.getElementById('list');
 
@@ -45,8 +51,8 @@ const updateRecipeNames = () => {
 
 updateRecipeNames();
 
-var recipesInTheList = [].slice.call(document.querySelectorAll('.stored'), 0);
-var recipeNumber;
+let recipesInTheList = [].slice.call(document.querySelectorAll('.stored'), 0);
+let recipeNumber;
 
 const showRecipe = (rec) => {
 	recipeNumber = recipesInTheList.indexOf(rec);
@@ -54,7 +60,7 @@ const showRecipe = (rec) => {
 	recipeName.innerHTML = `<h2>${savedRecipes[recipeNumber]["recipe-name"]}</h2>`;
 	recipeIngredients.innerHTML = `<p>${savedRecipes[recipeNumber]["ingredients"]}</p>`;
 	recipeDirections.innerHTML = `<p>${savedRecipes[recipeNumber]["directions"]}</p>`;
-	
+	update.style.display = 'block';
 }
 
 const deleteRecipe = () => {
@@ -63,6 +69,16 @@ const deleteRecipe = () => {
 	recipeName.innerHTML = ``;
 	recipeIngredients.innerHTML = ``;
 	recipeDirections.innerHTML = ``;
+}
+
+const updateRecipe = () => {
+	modal.style.display = 'block';
+
+	document.querySelector('textarea[name="recipe-name"]').innerHTML = savedRecipes[recipeNumber]["recipe-name"];
+	document.querySelector('textarea[name="ingredients"]').innerHTML = savedRecipes[recipeNumber]["ingredients"];
+	document.querySelector('textarea[name="directions"]').innerHTML = savedRecipes[recipeNumber]["directions"];
+	
+
 }
 
 const resetLocalStorage = () => {
@@ -85,7 +101,8 @@ const handleFormSubmit = event => {
 
 	savedRecipes.push(data);
 	resetLocalStorage();
-	form.reset();	
+	form.reset();
+	modal.style.display = 'none';	
   };
 
 form.addEventListener('submit', handleFormSubmit);
