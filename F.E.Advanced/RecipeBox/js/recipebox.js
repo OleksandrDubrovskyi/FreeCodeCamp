@@ -7,6 +7,7 @@ const deleteRec = document.getElementById('delete');
 const close = document.getElementById('close');
 const modal = document.getElementById('modal');
 const update = document.getElementById('update');
+const updateRecipeButton = document.getElementById('update-recipe');
 
 const recipeName = document.getElementById('name');
 const recipeIngredients = document.getElementById('ingredients');
@@ -73,6 +74,8 @@ const deleteRecipe = () => {
 
 const updateRecipe = () => {
 	modal.style.display = 'block';
+	document.getElementById("update-recipe").style.display = 'block';
+	document.getElementById("submit-recipe").style.display = 'none';
 
 	document.querySelector('textarea[name="recipe-name"]').innerHTML = savedRecipes[recipeNumber]["recipe-name"];
 	document.querySelector('textarea[name="ingredients"]').innerHTML = savedRecipes[recipeNumber]["ingredients"];
@@ -105,7 +108,26 @@ const handleFormSubmit = event => {
 	modal.style.display = 'none';	
   };
 
+const handleUpdateRecipe =  event => {
+  
+	event.preventDefault();
+	const data = formToJSON(form.elements);
+
+	savedRecipes[recipeNumber] = data;
+	resetLocalStorage();
+
+	recipeName.innerHTML = `<h2>${data["recipe-name"]}</h2>`;
+	recipeIngredients.innerHTML = `<p>${data["ingredients"]}</p>`;
+	recipeDirections.innerHTML = `<p>${data["directions"]}</p>`;
+
+	form.reset();
+	modal.style.display = 'none';	
+  };
+
 form.addEventListener('submit', handleFormSubmit);
+
+updateRecipeButton.addEventListener('click', handleUpdateRecipe);
+
 
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 
