@@ -9,6 +9,8 @@ const modal = document.getElementById('modal');
 const update = document.getElementById('update');
 const updateRecipeButton = document.getElementById('update-recipe');
 
+const form = document.getElementById('input-form');
+const recipeList = document.getElementById('list');
 const recipeName = document.getElementById('name');
 const recipeIngredients = document.getElementById('ingredients');
 const recipeDirections = document.getElementById('directions');
@@ -36,8 +38,6 @@ close.addEventListener('click', function (evt) {
 
 //-------------Recipes----------------------------\\
 let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-
-const recipeList = document.getElementById('list');
 
 const updateRecipeNames = () => {
 	if(savedRecipes) {
@@ -91,12 +91,6 @@ const resetLocalStorage = () => {
 }
 
 //---------------------Modal widget------------------------\\
-const form = document.getElementById('input-form');
-
-const isValidElement = element => {
-	return element.name && element.value;
-  };
-
 const handleFormSubmit = event => {
   
 	event.preventDefault();
@@ -125,9 +119,11 @@ const handleUpdateRecipe =  event => {
   };
 
 form.addEventListener('submit', handleFormSubmit);
-
 updateRecipeButton.addEventListener('click', handleUpdateRecipe);
 
+const isValidElement = element => {
+	return element.name && element.value;
+  };
 
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 

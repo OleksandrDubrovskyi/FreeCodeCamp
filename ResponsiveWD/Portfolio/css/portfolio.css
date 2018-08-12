@@ -1,47 +1,124 @@
+/*General Styles*/
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-li a {
-  text-decoration: none;
-  color: white;
-  margin-right: 10px;
+html {
+	font: normal 16px sans-serif;
+	color: #555;
 }
 
-#navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0%;
-  min-height: 40px;
-  background-color: blue;
-  padding: 10px;
+nav {
+	list-style: none;
 }
 
-#navbar ul {
-  display: flex;
+a {
+	text-decoration: none;
+	opacity: 0.75;
+	color: #fff;
 }
 
-#navbar ul li {
-  list-style: none;
-  font-weight: bold;
+a:hover {
+	opacity: 1;
 }
 
-#projects {
-  display: flex;
-  min-height: 50vh;
-  background-color: aqua;
+a.btn {
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	background-color: #3f51b5;
+	opacity: 1;
 }
 
-.project-tile {
-  flex: 25% 1 1;
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px 80px;
 }
 
-#welcome-section {
-  background-color: burlywood;
-  min-height: 100vh;
-  margin-top: 40px;
-  padding: 40px 20px 20px 20px;
+/*Header Styles*/
+
+header {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 35px 100px 0;
+	animation: 1s fadein 0.5s forwards;
+	opacity: 0;
+	color: #fff;
+}
+
+@keyframes fadein {
+	100% {
+		opacity: 1;
+	}
+}
+
+header h2 {
+	font-family: "Modern+Antiqua", cursive;
+}
+
+header nav {
+	display: flex;
+	margin-right: -15px;
+}
+
+header nav li {
+  margin: 0 15px;
+	font-family: "Comfortaa", cursive;
+}
+
+/*Hero Styles*/
+
+#welcome-section{
+	position: relative;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	color: #fff;
+}
+
+#welcome-section .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: -1;
+	background-color: #80a3db;
+}
+
+#welcome-section h1 {
+	font: bold 60px "Open Sans", sans-serif;
+	margin-bottom: 15px;
+}
+
+#welcome-section h3 {
+	font: normal 28px "Open Sans", sans-serif;
+	margin-bottom: 40px;
+}
+
+#welcome-section a.btn {
+	padding: 20px 46px;
+}
+
+.welcome-content-area {
+	opacity: 0;
+	margin-top: 100px;
+	animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+		margin: 0;
+	}
 }
