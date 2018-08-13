@@ -58,10 +58,11 @@ let recipeNumber;
 const showRecipe = (rec) => {
 	recipeNumber = recipesInTheList.indexOf(rec);
 
-	recipeName.innerHTML = `<h2>${savedRecipes[recipeNumber]["recipe-name"]}</h2>`;
+	recipeName.innerHTML = `<h3>${savedRecipes[recipeNumber]["recipe-name"]}</h3>`;
 	recipeIngredients.innerHTML = `<p>${savedRecipes[recipeNumber]["ingredients"]}</p>`;
 	recipeDirections.innerHTML = `<p>${savedRecipes[recipeNumber]["directions"]}</p>`;
-	update.style.display = 'block';
+	update.style.display = 'inline';
+	deleteRec.style.display = 'inline';
 }
 
 const deleteRecipe = () => {
