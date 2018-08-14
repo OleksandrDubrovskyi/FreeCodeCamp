@@ -41,6 +41,13 @@ section {
 	padding: 100px 80px;
 }
 
+section h3.title {
+	text-transform: capitalize;
+	font: bold 2em "Arial", sans-serif;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
 /*Header Styles*/
 
 header {
@@ -75,7 +82,7 @@ header nav li {
 	font-family: "Comfortaa", cursive;
 }
 
-/*Hero Styles*/
+/*Welcome Styles*/
 
 #welcome-section{
 	position: relative;
@@ -121,4 +128,27 @@ header nav li {
 		opacity: 1;
 		margin: 0;
 	}
+}
+
+/*Projects Styles*/
+
+.tile {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.project-title {
+	height: 350px;
+	padding: 20px;
+	border: #3f51b5 2px solid;
+}
+
+#projects .small {
+	flex-basis: 30%;
+}
+
+#projects .big {
+	flex-basis: 70%;
 }
