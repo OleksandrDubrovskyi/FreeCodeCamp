@@ -2,6 +2,9 @@ let express = require("express");
 let app = express();
 let bodyParser = require("body-parser");
 
+const Campground = require('./db').Campground;
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
